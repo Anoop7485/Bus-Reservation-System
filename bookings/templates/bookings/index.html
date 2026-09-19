@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Travels Booking</title>
+  <link rel="stylesheet" href="{% static 'bookings/styles.css' %}" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="app-header">
+      <div>
+        <h1>Travels Booking</h1>
+        <p class="subtitle">Browse buses, choose a seat, and book your trip.</p>
+      </div>
+      <div class="header-actions">
+        <button id="homeButton" class="nav-button hidden">Home</button>
+        <button id="bookingsButton" class="nav-button hidden">My Bookings</button>
+        <button id="logoutButton" class="nav-button hidden">Logout</button>
+      </div>
+    </header>
+
+    <main>
+      <section id="messageBox" class="message-box hidden"></section>
+
+      <section id="authSection" class="grid-two">
+        <article class="card">
+          <h2>Login</h2>
+          <form id="loginForm" class="form-card">
+            <label>
+              Username
+              <input type="text" name="username" required />
+            </label>
+            <label>
+              Password
+              <input type="password" name="password" required />
+            </label>
+            <button type="submit" class="primary-button">Login</button>
+          </form>
+        </article>
+
+        <article class="card">
+          <h2>Register</h2>
+          <form id="registerForm" class="form-card">
+            <label>
+              Username
+              <input type="text" name="username" required />
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" required />
+            </label>
+            <label>
+              Password
+              <input type="password" name="password" required />
+            </label>
+            <button type="submit" class="secondary-button">Create Account</button>
+          </form>
+        </article>
+      </section>
+
+      <section id="busesSection" class="hidden">
+        <div class="section-header">
+          <h2>Available Buses</h2>
+          <p>Select a bus below to view available seats.</p>
+        </div>
+        <div id="busList" class="card-grid"></div>
+      </section>
+
+      <section id="busDetailSection" class="hidden">
+        <button id="backToBuses" class="link-button">← Back to buses</button>
+        <div id="busDetail" class="card"></div>
+      </section>
+
+      <section id="userBookingsSection" class="hidden">
+        <div class="section-header">
+          <h2>My Bookings</h2>
+        </div>
+        <div id="bookingList" class="card-grid"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="{% static 'bookings/app.js' %}"></script>
+</body>
+</html>

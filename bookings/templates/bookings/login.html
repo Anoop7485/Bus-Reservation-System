@@ -1,0 +1,22 @@
+{% extends 'bookings/base.html' %}
+
+{% block content %}
+<section class="page-center auth-page">
+  <article class="card auth-card">
+    <h2>Login</h2>
+    <p class="auth-description">Welcome back! Enter your credentials to continue booking.</p>
+    <form id="loginForm" class="form-card" action="#" onsubmit="return false;">
+      <label>
+        Username
+        <input type="text" name="username" required />
+      </label>
+      <label>
+        Password
+        <input type="password" name="password" required />
+      </label>
+      <button type="submit" class="primary-button">Login</button>
+    </form>
+    <p class="auth-footer">Not registered yet? <a href="{% url 'register' %}">Create an account</a>.</p>
+  </article>
+</section>
+{% endblock %}

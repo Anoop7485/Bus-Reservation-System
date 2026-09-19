@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> Kumar Travels Booking</title>
+  <link rel="stylesheet" href="{% static 'bookings/styles.css' %}" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="app-header">
+      <div></div>
+      <div class="header-actions">
+        <a href="/" class="nav-button" id="homeLink">Home</a>
+        <button id="logoutLink" class="nav-button hidden">Logout</button>
+      </div>
+    </header>
+
+    <main>
+      <section id="messageBox" class="message-box hidden"></section>
+      {% block content %}{% endblock %}
+    </main>
+  </div>
+
+  <script src="{% static 'bookings/app.js' %}"></script>
+</body>
+</html>

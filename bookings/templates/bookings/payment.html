@@ -1,0 +1,29 @@
+{% extends 'bookings/base.html' %}
+
+{% block content %}
+<section class="payment-page">
+  <article class="card payment-card">
+    <h2>Payment</h2>
+    <form id="paymentForm" class="form-card">
+      <input type="hidden" name="seat_id" id="seatIdInput" />
+      <label>
+        Card Number
+        <input type="text" name="card_number" id="cardNumberInput" required minlength="12" />
+      </label>
+      <label>
+        Name on Card
+        <input type="text" name="card_name" required />
+      </label>
+      <label>
+        Expiry Date
+        <input type="month" name="expiry_date" required />
+      </label>
+      <label>
+        CVV
+        <input type="password" name="cvv" required minlength="3" maxlength="4" />
+      </label>
+      <button type="submit" class="primary-button">Pay Now</button>
+    </form>
+  </article>
+</section>
+{% endblock %}

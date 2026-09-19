@@ -1,0 +1,34 @@
+{% extends 'bookings/base.html' %}
+
+{% block content %}
+<section id="heroSection" class="page-center">
+  <div class="hero-card">
+    <h1> Kumar Travels Booking</h1>
+    <p class="hero-subtitle">Welcome to Travels Booking — your trusted bus reservation portal.</p>
+    <div class="hero-actions">
+      <a href="{% url 'login' %}" class="primary-button">Login</a>
+      <a href="{% url 'register' %}" class="secondary-button">Register</a>
+    </div>
+  </div>
+</section>
+
+<section id="busesSection" class="hidden">
+  <div class="section-header">
+    <h2>Available Buses</h2>
+    <p>Select a bus below to view available seats.</p>
+  </div>
+  <div id="busList" class="card-grid"></div>
+</section>
+
+<section id="busDetailSection" class="hidden">
+  <button id="backToBuses" class="link-button">← Back to buses</button>
+  <div id="busDetail" class="card"></div>
+</section>
+
+<section id="userBookingsSection" class="hidden">
+  <div class="section-header">
+    <h2>My Bookings</h2>
+  </div>
+  <div id="bookingList" class="card-grid"></div>
+</section>
+{% endblock %}
